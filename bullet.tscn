@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpu2b2dd4ri4u"]
+[gd_scene load_steps=4 format=3 uid="uid://cpu2b2dd4ri4u"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btduj"]
-radius = 9.0
-height = 18.0
+[ext_resource type="Texture2D" uid="uid://3atl505qgd3j" path="res://sprites/placeholderBullet.png" id="1_a71k3"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_mw4ea"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wkpq"]
+height = 20.0
 
 [node name="Bullet" type="Node2D"]
+position = Vector2(500, 250)
+script = ExtResource("1_mw4ea")
+metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(232, 122)
-shape = SubResource("CapsuleShape2D_btduj")
+[node name="hitArea" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_6wkpq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_a71k3")
