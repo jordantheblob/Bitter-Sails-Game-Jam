@@ -6,8 +6,7 @@ func _ready():
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed('attack'):
-		print_debug('attack')
+	pass
 
 
 func _on_player_shoot(bullet, location):
